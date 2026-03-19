@@ -31,7 +31,6 @@
     <files folder="components/com_k2">
         <folder>controllers</folder>
         <folder>css</folder>
-        <folder>forms</folder>
         <folder>helpers</folder>
         <folder>images</folder>
         <folder>models</folder>
