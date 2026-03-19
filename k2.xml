@@ -7,7 +7,7 @@
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
     <authorEmail>info@stormwebdesign.co.uk</authorEmail>
     <authorUrl>https://stormwebdesign.co.uk</authorUrl>
-    <version>3.0.0</version>
+    <version>3.0.1</version>
     <description>COM_K2_DESCRIPTION</description>
     <namespace path="src">Joomla\Component\K2</namespace>
     <scriptfile>script.php</scriptfile>
@@ -29,12 +29,17 @@
     </update>
 
     <files folder="components/com_k2">
-        <folder>src</folder>
-        <folder>tmpl</folder>
-        <folder>templates</folder>
-        <folder>forms</folder>
+        <folder>controllers</folder>
         <folder>css</folder>
+        <folder>forms</folder>
+        <folder>helpers</folder>
         <folder>images</folder>
+        <folder>models</folder>
+        <folder>src</folder>
+        <folder>templates</folder>
+        <folder>views</folder>
+        <filename>k2.php</filename>
+        <filename>router.php</filename>
     </files>
 
     <media destination="k2" folder="media/k2">
@@ -45,13 +50,10 @@
         <folder>items</folder>
         <folder>users</folder>
         <folder>videos</folder>
-        <folder>js</folder>
-        <folder>css</folder>
     </media>
 
     <languages folder="language">
-        <language tag="en-GB">en-GB/com_k2.ini</language>
-        <language tag="en-GB">en-GB/com_k2.sys.ini</language>
+        <language tag="en-GB">en-GB/en-GB.com_k2.ini</language>
     </languages>
 
     <administration>
@@ -68,17 +70,26 @@
             <menu view="media" link="option=com_k2&amp;view=media">COM_K2_MEDIA_MANAGER</menu>
         </submenu>
         <files folder="administrator/components/com_k2">
+            <folder>controllers</folder>
+            <folder>elements</folder>
             <folder>forms</folder>
+            <folder>helpers</folder>
+            <folder>jupgrade</folder>
+            <folder>lib</folder>
+            <folder>models</folder>
             <folder>services</folder>
             <folder>sql</folder>
             <folder>src</folder>
-            <folder>tmpl</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
             <filename>access.xml</filename>
             <filename>config.xml</filename>
+            <filename>k2.php</filename>
         </files>
         <languages folder="administrator/language">
-            <language tag="en-GB">en-GB/com_k2.ini</language>
-            <language tag="en-GB">en-GB/com_k2.sys.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_k2.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_k2.sys.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_k2.menu.ini</language>
         </languages>
     </administration>
 
