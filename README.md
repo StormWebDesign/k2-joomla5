@@ -1,58 +1,86 @@
-![K2](https://updates.getk2.org/images/k2_logo.png)
-***
+# K2 for Joomla 5
 
-You've already been there... Joomla is a great content management system. In fact it's considered one of the best in the world. But the default article system in Joomla is both spartan and confusing to configure and template in newer versions! In Joomla 1.5 it was just a title and your content body. In Joomla 2.5 article images where introduced as separate fields (but without any auto-resizing) and in Joomla 3.x tags where introduced as a separate component. Have you seen the options to configure all these?
+A complete migration of the popular K2 content extension to Joomla 5, featuring modern PHP 8.1+ code, namespaced classes, and full compatibility with Joomla 5's architecture.
 
-This is where K2 comes in.
+## About This Fork
 
-**K2 was built as a complete replacement of the default article system in Joomla**. Install it like any Joomla extension, import your articles from the default Joomla article system and you instantly get a host of new features for your existing content: rich content forms for items (think of Joomla articles with additional fields for article images, videos, podcasts & other audio files, image galleries and attachments), hassle-free image management (uploaded item images are auto-resized to 6 configurable dimensions, either globally or per category - you can now forget about using Photoshop resizing!), comments, tagging, built-in options to extend content forms (e.g. to create product catalogs), powerful content modules fetching K2 content in any way you can imagine, frontend editing with easy to use access control settings (for content-heavy websites), powerful yet easy templating (and sub-templating) for going above the "Joomla average", extended user profiles, user groups, blogs, a powerful plugin API to extend item/category/user forms, "drag and drop" media manager and many more!
+This is a **Joomla 5 only** version of K2, maintained by Storm Web Design Ltd. The codebase has been completely modernized to use:
 
-K2 is the ideal solution for managing your content, regardless of site "size": you can use it from a small blog to a complex corporate site or even a multi-author environment (portals, magazines etc.). To provide a practical example, using K2, you can transform your Joomla website to a news/magazine site with author blogs, product catalogs, work portfolio, knowledge base, download/document manager, directory listing, event listing and more, all this bundled under one package! And since K2 is extensible with additional fields to its base item form, you can easily create category-specific content types, e.g. article, blog post, product page, directory listing.
+- PSR-4 namespaces throughout
+- PHP 8.1+ typed properties and modern syntax
+- Joomla 5 MVC patterns and service providers
+- Modern database query patterns with parameter binding
+- Event subscriber pattern for plugins
+- Web Asset Manager for frontend assets
 
-**It's no wonder that K2 powers some of the biggest and most popular Joomla sites ever built worldwide!**
+## Features
 
-These integrated features in K2 not only save website administrators precious management time (from managing a dozen extensions which would otherwise be required), but they also allow for better performance.
+K2 provides a complete replacement of the default article system in Joomla:
 
-K2 was actually built on these 4 principles: feature-rich content in Joomla, ease of use (for any type of user), flexible templating, performance
+- **Rich Content Forms** - Additional fields for images, videos, image galleries, and attachments
+- **Automatic Image Resizing** - Uploaded images auto-resize to 6 configurable dimensions
+- **Comments System** - Built-in commenting with moderation
+- **Tagging** - Comprehensive tag management
+- **Extra Fields** - Extend content forms for product catalogs, portfolios, etc.
+- **Frontend Editing** - Easy-to-use access control settings
+- **Flexible Templating** - Powerful sub-templating system
+- **User Profiles** - Extended user profiles and groups
+- **Media Manager** - Drag and drop media management
+- **Plugin API** - Extend item/category/user forms
 
-**And best of all? K2 is totally free to use!**
+## Requirements
 
+- **Joomla 5.0+**
+- **PHP 8.1+**
+- **MySQL 5.7+ / MariaDB 10.2+**
 
-### Some facts about K2
-* It has been downloaded more than 4 million times since March 2009.
-* Actively powers dozens of thousands of Joomla sites worldwide ([metrics](https://metrics.getk2.org) gathered since v2.7.0).
-* Almost all Joomla template clubs provide K2 specific styling and/or display K2 as part of their demo sites.
-* There are hundreds of extensions supporting or integrating K2 in the Joomla Extensions Directory - see: [K2 Extensions on the JED](https://extensions.joomla.org/instant-search/?jed_live[refinementList][core_catid][0]=K2%20extensions)
-* The first version of the Joomla Magazine and JoomlaGov.info (the directory for government websites built with Joomla) are powered by K2.
-* K2 is used in some of the top Joomla websites worldwide by organizations like the Harvard University, The National Institute of Technology in Brazil, the UK's NHS, Top Gear, Groupama, Amnesty International, ActionAid, The High Court of Australia, Arturia, Cyrus Audio and many, many more.
-* K2 is FULLY compatible with Joomla versions 1.5, 2.5 and 3.x on PHP versions 5, 7 & 8.
+## Installation
 
+1. Download the latest release
+2. Install via Joomla's Extension Manager
+3. Navigate to Components > K2 to begin configuration
 
-### Download K2
-You can download the latest rolling release here:
+## Migration from K2 2.x
 
-https://getk2.org/downloads/?f=K2_Rolling_Release.zip
+If migrating from an older K2 installation:
 
+1. Ensure your Joomla installation is updated to version 5.0+
+2. Backup your database and files
+3. Install this version of K2 as an update
+4. Review [MIGRATION_NOTES.md](MIGRATION_NOTES.md) for detailed changes
 
-### Changelog
-Since June 2024, we have moved the changelog from our blog to GitHub, here:
+## Documentation
 
-https://github.com/getk2/k2/blob/master/CHANGELOG.md
+- [Migration Notes](MIGRATION_NOTES.md) - Technical details of the Joomla 5 migration
+- [Changelog](CHANGELOG.md) - Version history and release notes
 
+## Template Overrides
 
-### Discussion Board (Support Forum)
-Since May 2025, we have moved the K2 support forum to GitHub, here:
+Template overrides remain compatible with previous versions. Place your overrides in:
 
-https://github.com/getk2/k2/discussions
+```
+templates/{your-template}/html/com_k2/
+```
 
-### Code Documentation (AI Generated)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/getk2/k2) [![zread](https://img.shields.io/badge/Ask_Zread-_.svg?style=flat&color=00b0aa&labelColor=000000&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuOTYxNTYgMS42MDAxSDIuMjQxNTZDMS44ODgxIDEuNjAwMSAxLjYwMTU2IDEuODg2NjQgMS42MDE1NiAyLjI0MDFWNC45NjAxQzEuNjAxNTYgNS4zMTM1NiAxLjg4ODEgNS42MDAxIDIuMjQxNTYgNS42MDAxSDQuOTYxNTZDNS4zMTUwMiA1LjYwMDEgNS42MDE1NiA1LjMxMzU2IDUuNjAxNTYgNC45NjAxVjIuMjQwMUM1LjYwMTU2IDEuODg2NjQgNS4zMTUwMiAxLjYwMDEgNC45NjE1NiAxLjYwMDFaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00Ljk2MTU2IDEwLjM5OTlIMi4yNDE1NkMxLjg4ODEgMTAuMzk5OSAxLjYwMTU2IDEwLjY4NjQgMS42MDE1NiAxMS4wMzk5VjEzLjc1OTlDMS42MDE1NiAxNC4xMTM0IDEuODg4MSAxNC4zOTk5IDIuMjQxNTYgMTQuMzk5OUg0Ljk2MTU2QzUuMzE1MDIgMTQuMzk5OSA1LjYwMTU2IDE0LjExMzQgNS42MDE1NiAxMy43NTk5VjExLjAzOTlDNS42MDE1NiAxMC42ODY0IDUuMzE1MDIgMTAuMzk5OSA0Ljk2MTU2IDEwLjM5OTlaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik0xMy43NTg0IDEuNjAwMUgxMS4wMzg0QzEwLjY4NSAxLjYwMDEgMTAuMzk4NCAxLjg4NjY0IDEwLjM5ODQgMi4yNDAxVjQuOTYwMUMxMC4zOTg0IDUuMzEzNTYgMTAuNjg1IDUuNjAwMSAxMS4wMzg0IDUuNjAwMUgxMy43NTg0QzE0LjExMTkgNS42MDAxIDE0LjM5ODQgNS4zMTM1NiAxNC4zOTg0IDQuOTYwMVYyLjI0MDFDMTQuMzk4NCAxLjg4NjY0IDE0LjExMTkgMS42MDAxIDEzLjc1ODQgMS42MDAxWiIgZmlsbD0iI2ZmZiIvPgo8cGF0aCBkPSJNNCAxMkwxMiA0TDQgMTJaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00IDEyTDEyIDQiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K&logoColor=ffffff)](https://zread.ai/getk2/k2)
+## Third-Party Extensions
 
-### Resources
-The main K2 site features K2-specific extensions, translations, video tutorials, documentation, tips & a showcase of Joomla sites built with K2.
+K2-specific extensions from the Joomla Extensions Directory may require updates to work with this version. Contact the extension developers for Joomla 5 compatibility.
 
-More info at: https://getk2.org
+## Support
 
-***
+For issues and feature requests, please use the GitHub Issues tracker.
 
-Copyright &copy; 2009 - 2025 [JoomlaWorks Ltd.](https://www.joomlaworks.net)
+## Credits
+
+- **Original K2** - JoomlaWorks Ltd. (https://getk2.org)
+- **Joomla 5 Migration** - Russell English, Storm Web Design Ltd.
+
+## License
+
+GNU General Public License v2 or later
+https://gnu.org/licenses/gpl.html
+
+---
+
+Copyright (C) 2026 Storm Web Design Ltd. All rights reserved.
+https://stormwebdesign.co.uk

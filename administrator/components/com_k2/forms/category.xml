@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="basic" label="COM_K2_BASIC">
+        <field
+            name="id"
+            type="hidden"
+        />
+        <field
+            name="name"
+            type="text"
+            label="JGLOBAL_TITLE"
+            required="true"
+            size="40"
+            class="form-control"
+        />
+        <field
+            name="alias"
+            type="text"
+            label="JFIELD_ALIAS_LABEL"
+            hint="JFIELD_ALIAS_PLACEHOLDER"
+            size="40"
+            class="form-control"
+        />
+        <field
+            name="parent"
+            type="sql"
+            label="JFIELD_CATEGORY_PARENT_LABEL"
+            query="SELECT id AS value, name AS text FROM #__k2_categories WHERE trash = 0 ORDER BY name"
+            key_field="value"
+            value_field="text"
+            default="0"
+            class="form-select"
+        >
+            <option value="0">JNONE</option>
+        </field>
+        <field
+            name="published"
+            type="list"
+            label="JSTATUS"
+            default="1"
+            class="form-select"
+        >
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+        </field>
+        <field
+            name="access"
+            type="accesslevel"
+            label="JFIELD_ACCESS_LABEL"
+            default="1"
+            class="form-select"
+        />
+        <field
+            name="language"
+            type="contentlanguage"
+            label="JFIELD_LANGUAGE_LABEL"
+            class="form-select"
+        >
+            <option value="*">JALL</option>
+        </field>
+        <field
+            name="extraFieldsGroup"
+            type="sql"
+            label="COM_K2_EXTRA_FIELDS_GROUP"
+            query="SELECT id AS value, name AS text FROM #__k2_extra_fields_groups ORDER BY name"
+            key_field="value"
+            value_field="text"
+            default="0"
+            class="form-select"
+        >
+            <option value="0">JNONE</option>
+        </field>
+    </fieldset>
+    <fieldset name="description" label="COM_K2_DESCRIPTION">
+        <field
+            name="description"
+            type="editor"
+            label="JGLOBAL_DESCRIPTION"
+            filter="safehtml"
+            buttons="true"
+        />
+    </fieldset>
+    <fieldset name="images" label="COM_K2_IMAGES">
+        <field
+            name="image"
+            type="file"
+            label="COM_K2_CATEGORY_IMAGE"
+            accept="image/*"
+            class="form-control"
+        />
+    </fieldset>
+</form>
