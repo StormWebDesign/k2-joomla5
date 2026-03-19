@@ -154,12 +154,18 @@ class Com_K2InstallerScript implements InstallerScriptInterface
      */
     protected function createDefaultUserGroups(DatabaseInterface $db): void
     {
-        $query = $db->getQuery(true)
-            ->select('COUNT(*)')
-            ->from($db->quoteName('#__k2_user_groups'));
-        $db->setQuery($query);
+        // Check if table exists and has data
+        try {
+            $query = $db->getQuery(true)
+                ->select('COUNT(*)')
+                ->from($db->quoteName('#__k2_user_groups'));
+            $db->setQuery($query);
 
-        if ($db->loadResult() > 0) {
+            if ($db->loadResult() > 0) {
+                return;
+            }
+        } catch (\Exception $e) {
+            // Table might not exist yet, skip this step
             return;
         }
 
